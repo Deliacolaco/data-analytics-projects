@@ -45,6 +45,14 @@ The analysis identified three customer segments:
 2. Wealthy Metropolitan Executives
 3. Knowledgeable Suburban Adults
 
+## Visual Outputs
+
+![Age and Income Distribution](assets/age-income-distribution.png)
+
+![Elbow Method](assets/elbow-method.png)
+
+![Silhouette Analysis](assets/silhouette-analysis.png)
+
 ## Business Recommendations
 Each customer segment was matched with targeted marketing actions, including:
 - Low-cost digital membership offers
