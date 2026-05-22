@@ -100,10 +100,14 @@ customer base and responds well to community and family-focused engagement.
 ---
 
 ## Visual Outputs
-- Age and income distribution by segment
-- Elbow Method chart (optimal k selection)
-- Silhouette Analysis chart (cluster quality)
-- Segment profile comparisons
+### Age and Income Distribution
+![Age and Income Distribution](assets/age-income-distribution.png)
+
+### Elbow Method — Optimal k Selection
+![Elbow Method](assets/elbow-method.png)
+
+### Silhouette Analysis — Cluster Quality
+![Silhouette Analysis](assets/silhouette-analysis.png)
 
 ---
 
