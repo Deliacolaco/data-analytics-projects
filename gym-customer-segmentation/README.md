@@ -1,15 +1,26 @@
 # Gym Customer Segmentation
 
 ## Overview
-This project segments 2,000 gym members using Python clustering techniques to identify meaningful customer groups and support targeted marketing strategy.
+This project applied K-Means++ and Agglomerative clustering in Python 
+to segment 2,000 gym members into three distinct customer profiles. 
+The goal was to help a gym chain better understand its customer base 
+and design more targeted, data-driven marketing strategies for each segment.
+
+---
 
 ## Business Problem
-A gym chain needs to better understand its customer base so it can design more relevant marketing campaigns, improve customer targeting, and tailor offers to different member groups.
+A gym chain lacked visibility into differences across its customer base, 
+making it difficult to personalise offers or allocate marketing spend 
+effectively. The objective was to identify actionable customer segments 
+and match each with relevant marketing recommendations.
+
+---
 
 ## Dataset
-The dataset contains 2,000 gym member records across demographic and socioeconomic variables.
+The dataset contains 2,000 gym member records across demographic 
+and socioeconomic variables.
 
-Key variables include:
+**Key variables:**
 - Age
 - Income
 - Gender
@@ -18,6 +29,11 @@ Key variables include:
 - Marital status
 - Settlement size
 
+> Dataset not included due to university assessment restrictions. 
+> All analysis and outputs are original work.
+
+---
+
 ## Tools Used
 - Python
 - Pandas
@@ -25,44 +41,73 @@ Key variables include:
 - Matplotlib
 - Scikit-learn
 
-## Method
-The analysis followed a structured customer segmentation workflow:
+---
 
+## Method
+After cleaning and standardising the data, the Elbow Method and 
+Silhouette Analysis were used to determine the optimal number of clusters (k=3).
+
+K-Means++ was applied as the primary clustering method due to its 
+improved initialisation over standard K-Means. Agglomerative clustering 
+was then run independently as a validation check. Both methods produced 
+consistent segment structures, supporting confidence in the results.
+
+Each segment was profiled across all demographic and behavioural 
+variables to support business interpretation and recommendation development.
+
+**Workflow:**
 1. Data cleaning and preparation
 2. Exploratory data analysis
-3. Feature scaling
-4. Elbow method
-5. Silhouette analysis
-6. K-means++ clustering
-7. Agglomerative clustering
-8. Segment interpretation
+3. Feature scaling (StandardScaler)
+4. Elbow Method — optimal k selection
+5. Silhouette Analysis — cluster quality validation
+6. K-Means++ clustering
+7. Agglomerative clustering (validation)
+8. Segment profiling and interpretation
 9. Marketing recommendations
 
+---
+
 ## Key Findings
-The analysis identified three customer segments:
 
-1. Youthful, Economically-Conscious Individuals
-2. Wealthy Metropolitan Executives
-3. Knowledgeable Suburban Adults
+Three distinct customer segments were identified:
 
-## Visual Outputs
+### Segment 1 — Youthful, Economically-Conscious Individuals
+Younger members with below-average income and high price sensitivity. 
+This group represents the highest churn risk and responds best to 
+low-cost, flexible membership options.
 
-![Age and Income Distribution](assets/age-income-distribution.png)
+### Segment 2 — Wealthy Metropolitan Executives
+High-income, urban professionals with low visit frequency despite 
+active memberships. This group has the highest revenue potential 
+and is most receptive to premium services and convenience-focused offers.
 
-![Elbow Method](assets/elbow-method.png)
+### Segment 3 — Knowledgeable Suburban Adults
+Mid-career, family-oriented members with consistent attendance and 
+strong retention rates. This group forms the gym's most stable 
+customer base and responds well to community and family-focused engagement.
 
-![Silhouette Analysis](assets/silhouette-analysis.png)
+---
 
 ## Business Recommendations
-Each customer segment was matched with targeted marketing actions, including:
-- Low-cost digital membership offers
-- Premium wellness and executive-focused services
-- Family and community-based membership campaigns
+
+| Segment | Strategy |
+|---|---|
+| Youthful, Economically-Conscious | Digital-first budget tiers, referral incentives, flexible contracts |
+| Wealthy Metropolitan Executives | Premium wellness packages, off-peak executive services, app-based convenience |
+| Knowledgeable Suburban Adults | Family membership bundles, community events, loyalty rewards |
+
+---
+
+## Visual Outputs
+- Age and income distribution by segment
+- Elbow Method chart (optimal k selection)
+- Silhouette Analysis chart (cluster quality)
+- Segment profile comparisons
+
+---
 
 ## Project Files
-- Report PDF
-- Python notebook
-- Visual outputs and screenshots
-
-## Note
-The dataset is not included if it is restricted by university or assessment rules.
+- [`report/`](report/) — Full project report (PDF)
+- [`code/`](code/) — Python notebook (.ipynb)
+- [`assets/`](assets/) — Visual outputs and screenshots
