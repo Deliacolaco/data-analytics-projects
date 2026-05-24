@@ -1,4 +1,4 @@
-# Student Retention & Attrition Analytics — Macquarie University
+# Student Retention Analytics — Macquarie University
 
 ## Overview
 This was a group project for BUSA8031 – Business Analytics Project. The project analysed student retention, attrition, progression, and academic outcomes using de-identified Macquarie University data from 2020 to 2025.
