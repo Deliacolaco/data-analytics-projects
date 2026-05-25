@@ -3,7 +3,7 @@
 
 I'm Delia Colaco, a Business Analytics graduate based in Sydney. This repository is where I work through analytical problems businesses actually face, using data to support decisions across strategy, marketing, operations, and customer experience.
 
-My interest sits in the layer between the data and the decision. I enjoy the technical side of analytics — the cleaning, the modelling, the dashboard design — but the goal is always to make the output useful to the people running the business, not to stop at the code.
+My interest sits in the layer between the data and the decision. I enjoy the technical side of analytics — the cleaning, the modelling, the dashboard design - but the goal is always to make the output useful to the people running the business, not to stop at the code.
 
 ## What's in this repository
 
