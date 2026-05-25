@@ -58,7 +58,7 @@ For Dashboard 2, I built each chart against an executive use case. Every filter 
 
 ## Links
 
-- [View full project write-up]([https://deliacolaco.github.io/](https://github.com/Deliacolaco/data-analytics-projects))
+- [View full project write-up](https://github.com/Deliacolaco/data-analytics-projects)
 - [View Dashboard 2 (Qlik Cloud)](https://23cen6dozz61syg.ap.qlikcloud.com/sense/app/9b261911-3aea-4951-99d3-3e603903742e/overview)
 
 ## Note
