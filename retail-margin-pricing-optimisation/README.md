@@ -18,13 +18,7 @@ A mid-size Australian retailer has a profitability problem but does not know whe
 
 **Source:** Kaggle Superstore Sales Dataset — synthetic but built on realistic retail transaction structure with sales, profit, discount, quantity, and product category columns.
 
-**Why this dataset:** No publicly available Australian retail dataset includes cost, margin, and discount columns together. This dataset has all of them and was reframed as an Australian retailer.
-
-**How it was reframed:**
-
-- Replaced US country and regions with Australia, NSW, VIC, QLD, WA
-- Dropped city and postcode — not needed for category-level analysis
-- Converted USD to AUD by multiplying all dollar values by 1.55
+No publicly available Australian retail dataset includes cost, margin, and discount columns together, so this dataset was reframed as an Australian retailer by replacing the US geography with Australia, NSW, VIC, QLD and WA; removing city and postcode fields that were not needed for category-level analysis; and converting USD values to AUD at 1.55.
 
 **Derived columns added:**
 
@@ -57,9 +51,7 @@ Quadrant labels: Invest (high sales, positive profit), Grow (low sales, positive
 
 **Margin waterfall**
 
-A waterfall chart was built for each category to separate cost structure problems from discounting problems. It shows four components in sequence: revenue without discount, discount loss, cost, and actual profit.
-
-The Furniture waterfall showed that even eliminating all discounts entirely would only recover $291,791 because cost already consumes 97% of actual sales revenue. This proved VIC Furniture has a cost structure problem that requires supplier renegotiation, not just a discount cap.
+A waterfall chart was built for each category to separate cost structure problems from discounting problems. It shows four components in sequence: revenue without discount, discount loss, cost, and actual profit. The consolidated results are reported in Key Findings below.
 
 ---
 
@@ -69,7 +61,7 @@ All SQL was run inside the Jupyter notebook using SQLite via SQLAlchemy. The cle
 
 **Margin and profit by region, category, and quarter**
 
-Answered whether margin was improving or declining over time and whether a strong overall number was hiding a deteriorating trend.
+Is that margin holding up over time, or is a strong headline number hiding a declining trend by quarter?
 
 ```sql
 SELECT
@@ -85,40 +77,9 @@ GROUP BY Region, Category, Year, Quarter
 ORDER BY Year, Quarter, Region, Category;
 ```
 
-**Discount frequency and profit per transaction**
-
-Identified which combinations were discounting the most and whether that discounting was resulting in negative profit. VIC Furniture came out at the top with 67.84% of transactions discounted and a negative average profit per transaction of -$8.96.
-
-```sql
-SELECT
-    Category,
-    Region,
-    COUNT(*) AS total_transactions,
-    SUM(CASE WHEN Discount > 0 THEN 1 ELSE 0 END) AS discounted_transactions,
-    ROUND(SUM(CASE WHEN Discount > 0 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS discounted_transaction_pct,
-    ROUND(AVG(Profit), 2) AS avg_profit_per_transaction
-FROM superstore
-GROUP BY Category, Region
-ORDER BY discounted_transaction_pct DESC;
-```
-
-**Average discount by category and region**
-
-Showed the average discount depth for each combination. VIC Furniture averaged 29.74% discount — more than double every other region's furniture discount.
-
-```sql
-SELECT
-    Category,
-    Region,
-    ROUND(AVG(Discount) * 100, 2) AS avg_discount_pct
-FROM superstore
-GROUP BY Category, Region
-ORDER BY avg_discount_pct DESC;
-```
-
 **Profit by exact discount level**
 
-Found the exact discount level where profit turned negative for each combination. VIC Furniture is profitable at 20% discount ($38.82 avg profit) and loss-making at 30% (-$74.96 avg profit). The cap recommendation is 20%.
+At what discount level does profit turn negative for each category-region combination?
 
 ```sql
 SELECT
@@ -133,22 +94,7 @@ GROUP BY Category, Region, Discount
 ORDER BY Category, Region, Discount;
 ```
 
-**Volume comparison above and below 30% discount**
-
-Answered the sales team objection that reducing discounts would cause volume to drop. The difference in average units sold per transaction was only +0.04 across all 12 combinations.
-
-```sql
-SELECT
-    Category,
-    Region,
-    ROUND(AVG(CASE WHEN Discount < 0.30 THEN Quantity END), 2) AS avg_quantity_below_30_discount,
-    ROUND(AVG(CASE WHEN Discount >= 0.30 THEN Quantity END), 2) AS avg_quantity_30_plus_discount,
-    COUNT(CASE WHEN Discount < 0.30 THEN 1 END) AS transactions_below_30_discount,
-    COUNT(CASE WHEN Discount >= 0.30 THEN 1 END) AS transactions_30_plus_discount
-FROM superstore
-GROUP BY Category, Region
-ORDER BY Category, Region;
-```
+Additional queries covering discount frequency, average discount, and volume comparison are in the notebook.
 
 ---
 
