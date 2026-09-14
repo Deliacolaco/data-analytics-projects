@@ -16,7 +16,7 @@ A mid-size Australian retailer has a profitability problem but does not know whe
 
 ## The Dataset
 
-**Source:** Kaggle Superstore Sales Dataset — synthetic but built on realistic retail transaction structure with sales, profit, discount, quantity, and product category columns.
+**Source:** Kaggle Superstore Sales Dataset, synthetic but built on realistic retail transaction structure with sales, profit, discount, quantity, and product category columns.
 
 No publicly available Australian retail dataset includes cost, margin, and discount columns together, so this dataset was reframed as an Australian retailer by replacing the US geography with Australia, NSW, VIC, QLD and WA; removing city and postcode fields that were not needed for category-level analysis; and converting USD values to AUD at 1.55.
 
@@ -102,9 +102,9 @@ Additional queries covering discount frequency, average discount, and volume com
 
 Two dashboards were built for different audiences.
 
-**CFO Summary Dashboard** — for executive decision-making. Shows total profit, total sales, average margin, profit by region and category, and quarterly profit trends. Region and Category filters update all visuals simultaneously.
+**CFO Summary Dashboard:** For executive decision-making. Shows total profit, total sales, average margin, profit by region and category, and quarterly profit trends. Region and Category filters update all visuals simultaneously.
 
-**Commercial Deep Dive Dashboard** — for commercial managers. Shows quadrant segmentation, weighted margin vs average discount, profit threshold by discount level, and revenue lost to discounting by segment. Includes a KPI showing +0.04 units volume difference to address the sales team objection directly.
+**Commercial Deep Dive Dashboard:** For commercial managers. Shows quadrant segmentation, weighted margin vs average discount, profit threshold by discount level, and revenue lost to discounting by segment. Includes a KPI showing +0.04 units volume difference to address the sales team objection directly.
 
 [View CFO Summary Dashboard](https://public.tableau.com/app/profile/delia.colaco/viz/AustralianRetailMarginDiscountAnalysisCFOSummary/CFOSummary)
 
@@ -114,7 +114,7 @@ Two dashboards were built for different audiences.
 
 ## Key Findings
 
-- VIC Furniture is the only loss-making segment (-1.70% weighted margin), driven by cost rather than discounting — cost consumes 97% of revenue, and even eliminating all discounts would only recover $291,791, not enough to fix the segment without supplier renegotiation.
+- VIC Furniture is the only loss-making segment (-1.70% weighted margin), driven by cost rather than discounting: cost consumes 97% of revenue, and even eliminating all discounts would only recover $291,791, not enough to fix the segment without supplier renegotiation.
 - 67.84% of VIC Furniture transactions are discounted at an average depth of 29.74%
 - Profit turns negative for VIC Furniture between 20% and 30% discount
 - The VIC Office Supplies 80% discount tier alone costs $47,376 in total profit loss
