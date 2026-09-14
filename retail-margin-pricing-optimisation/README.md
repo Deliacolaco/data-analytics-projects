@@ -106,18 +106,17 @@ Two dashboards were built for different audiences.
 
 **Commercial Deep Dive Dashboard** — for commercial managers. Shows quadrant segmentation, weighted margin vs average discount, profit threshold by discount level, and revenue lost to discounting by segment. Includes a KPI showing +0.04 units volume difference to address the sales team objection directly.
 
-[View CFO Summary Dashboard](#) — add Tableau Public link here
+[View CFO Summary Dashboard](https://public.tableau.com/app/profile/delia.colaco/viz/AustralianRetailMarginDiscountAnalysisCFOSummary/CFOSummary)
 
-[View Commercial Deep Dive Dashboard](#) — add Tableau Public link here
+[View Commercial Deep Dive Dashboard](https://public.tableau.com/app/profile/delia.colaco/viz/AustralianRetailMarginDiscountAnalysis/CommercialMarginDiscountAnalysisAustralianRetail?publish=yes)
 
 ---
 
 ## Key Findings
 
-- VIC Furniture is the only loss-making combination at -1.70% weighted margin
+- VIC Furniture is the only loss-making segment (-1.70% weighted margin), driven by cost rather than discounting — cost consumes 97% of revenue, and even eliminating all discounts would only recover $291,791, not enough to fix the segment without supplier renegotiation.
 - 67.84% of VIC Furniture transactions are discounted at an average depth of 29.74%
 - Profit turns negative for VIC Furniture between 20% and 30% discount
-- VIC Furniture cost is 97% of actual sales revenue — a cost structure problem requiring supplier renegotiation
 - The VIC Office Supplies 80% discount tier alone costs $47,376 in total profit loss
 - Discounting above 30% increases units sold by only +0.04 per transaction on average
 - WA Technology and NSW Office Supplies are the strongest performing combinations
